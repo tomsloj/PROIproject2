@@ -9,14 +9,14 @@ using namespace std;
 class Drama
 {
 	private:
-		string name;
+		string title;
 		string type;
 		//how long is (in minutes) 
 		short time;
 	
 	public:
-		Drama ( string name, string type, short time );
-		string getName ();
+		Drama ( string title = "", string type = "", short time = 0 );
+		string getTitle ();
 		string getType ();
 		short getTime ();
 

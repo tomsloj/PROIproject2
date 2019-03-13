@@ -2,6 +2,7 @@
 #define EMPLOYEE_H
 
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -13,12 +14,12 @@ class Employee
 		int age;
 	
 	public:
-		Employee ( string name, string surname, int age );
-		Employee ();
-		string getName ();
-		string getSurname ();
-		int getAge ();
-
+		Employee ( string name = "", string surname = "", int age = 0 );
+		string getName () const;
+		string getSurname () const;
+		int getAge () const;
+		
+		friend ostream& operator << (ostream & stream, const Employee& employee );
 };
 
 

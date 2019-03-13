@@ -8,16 +8,16 @@
 
 using namespace std;
 
-Drama :: Drama ( string name, string type, short time )
+Drama :: Drama ( string title, string type, short time )
 {
-	this->name = name;
+	this->title = title;
 	this->type = type;
 	this->time = time;
 }
 
-string Drama :: getName ()
+string Drama :: getTitle ()
 {
-	return name;
+	return title;
 }
 
 string Drama :: getType ()

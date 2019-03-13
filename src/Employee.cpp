@@ -14,23 +14,32 @@ Employee :: Employee ( string name, string surname, int age )
 	this->surname = surname;
 	this->age = age;
 }
-
+/*
 Employee :: Employee ()
 {
 	//do nothing
 }
-
-string Employee :: getName ()
+*/
+string Employee :: getName () const
 {
 	return name;
 }
 
-string Employee :: getSurname ()
+string Employee :: getSurname () const
 {
 	return surname;
 }
 
-int Employee :: getAge ()
+int Employee :: getAge () const
 {
 	return age;
+}
+
+ostream& operator << (ostream& stream, const Employee& employee )
+{
+	stream << employee.getName();
+	stream << " ";
+	stream << employee.getSurname();
+	stream << "\n";
+	return stream;
 }
