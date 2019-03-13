@@ -15,17 +15,17 @@ Drama :: Drama ( string title, string type, short time )
 	this->time = time;
 }
 
-string Drama :: getTitle ()
+string Drama :: getTitle () const
 {
 	return title;
 }
 
-string Drama :: getType ()
+string Drama :: getType () const
 {
 	return type;
 }
 
-short Drama :: getTime ()
+short Drama :: getTime () const
 {
 	return time;
 }

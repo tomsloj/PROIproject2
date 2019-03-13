@@ -16,9 +16,9 @@ class Drama
 	
 	public:
 		Drama ( string title = "", string type = "", short time = 0 );
-		string getTitle ();
-		string getType ();
-		short getTime ();
+		string getTitle () const;
+		string getType () const;
+		short getTime () const;
 
 };
 
