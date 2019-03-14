@@ -4,25 +4,21 @@
 #include <string>
 
 
-using namespace std;
-
 class Drama
 {
 	private:
-		string title;
-		string type;
+		std::string title;
+		std::string type;
 		//how long is (in minutes) 
 		short time;
 	
 	public:
-		Drama ( string title = "", string type = "", short time = 0 );
-		string getTitle () const;
-		string getType () const;
+		Drama ( std::string title = "", std::string type = "", short time = 0 );
+		std::string getTitle () const;
+		std::string getType () const;
 		short getTime () const;
 
 };
-
-
 
 
 #endif //DRAMA_H
