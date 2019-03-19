@@ -13,10 +13,9 @@ Drama :: Drama ()
 	//do nothing
 }
 
-Drama :: Drama ( string title, string type, short time )
+Drama :: Drama ( const string & title, const short & time )
 {
 	this->title = title;
-	this->type = type;
 	this->time = time;
 }
 
@@ -26,14 +25,6 @@ Drama :: Drama ( string title, string type, short time )
 string Drama :: getTitle () const
 {
 	return title;
-}
-
-/*
- * @return type of drama
- */
-string Drama :: getType () const
-{
-	return type;
 }
 
 /*
@@ -47,6 +38,5 @@ short Drama :: getTime () const
 void Drama :: operator = (const Drama & otherDrama)
 {
 	title = otherDrama.title;
-	type = otherDrama.type;
 	time = otherDrama.time;
 }
