@@ -8,16 +8,18 @@ class Ticket
 	private:
 		std::string type;
 		short price;
-		short ticketsNumber;
+		short ticketNumber;
 		
 	public:
 		Ticket ();
-		Ticket ( std::string type, short price, short ticketNumber = 1);
+		Ticket ( std::string type, short price, short ticketNumber);
 		
 		std::string getTicketType () const;
 		short getPrice () const;
-		short getTicketsNumber () const;
+		short getTicketNumber () const;
 
+		
+		void operator = (const Ticket & otherTicket);
 };
 
 

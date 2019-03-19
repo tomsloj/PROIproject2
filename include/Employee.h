@@ -12,12 +12,15 @@ class Employee
 		int age;
 	
 	public:
-		Employee ( string name = "", string surname = "", int age = 0 );
+		Employee ();
+		Employee ( std::string name, std::string surname, int age );
 		std::string getName () const;
 		std::string getSurname () const;
 		int getAge () const;
 		
-		friend ostream& operator << (ostream & stream, const Employee& employee );
+		void operator = (const Employee & otherEmployee);
+		
+		//friend std::ostream& operator << ( std::ostream & stream, const Employee& employee );
 		
 };
 

@@ -13,10 +13,13 @@ class Drama
 		short time;
 	
 	public:
-		Drama ( std::string title = "", std::string type = "", short time = 0 );
+		Drama ();
+		Drama ( std::string title, std::string type, short time );
 		std::string getTitle () const;
 		std::string getType () const;
 		short getTime () const;
+		
+		void operator = (const Drama & otherDrama);
 
 };
 

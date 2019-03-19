@@ -6,30 +6,41 @@
 
 #include "Employee.h"
 #include "Drama.h"
+#include "Ticket.h"
 
 
-
-template <typename Type>
+template <class Type>
 class Spectacle
 {
 	private:
 		Employee director;
 		Drama drama;
+		short numberOfPlaces;
+		short soldTickets;
+		Ticket *tickets;
 		std::vector<Employee>actors;
-		//time_t startOfSpectacle;
 		short viewers;
 		Type profit;
 	
 	public:
 		Spectacle ();
-		void setDirector ( std::string name, std::string surname, int age );
+		Spectacle ( const short & numberOfPlaces );
+		~Spectacle ();
+		
+		void setDirector ( const std::string & name, const std::string & surname, const int & age );
+		void setDirector ( const Employee & director );
 		void setDrama ( std::string title, std::string type, short time );
 		void setViewersNumber( short number );
+		void setNumberOfPlaces ( short numberOfPlaces );
 		
 		void addActor ( Employee & actor );
 		void addActor ( std::vector<Employee>& actors );
-		void addViewers ( short people, Type cash );
+		void addCosts ( const Type cost );
+		//void addViewers ( short people, int cash );
 		
+		bool addTicket ( const Ticket & ticket );
+		
+		Employee getDirector () const;
 		void writeActors () const;
 };
 

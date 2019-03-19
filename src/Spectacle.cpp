@@ -9,37 +9,105 @@
 
 using namespace std;
 
-template<class Type>
+template <class Type>
 Spectacle<Type> :: Spectacle ()
 {
-	
+	//do nothing
 }
 
-template<class Type>
-void Spectacle<Type> :: setDirector(string name, string surname, int age)
+template <class Type>
+Spectacle<Type> :: Spectacle (const short & numberOfPlaces)
+{
+	setNumberOfPlaces( numberOfPlaces );
+	tickets = new Ticket [numberOfPlaces];
+	soldTickets = 0;
+}
+
+template <class Type>
+Spectacle<Type> :: ~Spectacle ()
+{
+	delete[] tickets;
+}
+
+/*
+ * @param name name of director
+ * @param surname surname of director
+ * @param age age of director
+ * set new director
+ */
+template <class Type>
+void Spectacle<Type> :: setDirector(const string & name, const string & surname, const int & age)
 {
 	director = Employee( name, surname, age );
 }
 
-template<class Type>
+/*
+ * @param director new director
+ * set director as new director
+ */
+template <class Type>
+void Spectacle<Type> :: setDirector( const Employee & director )
+{
+	this->director = director;
+}
+
+/*
+ * @param title title of drama
+ * @param type type of drama
+ * @param time length of drama
+ * set drama as new drama
+ */
+template <class Type>
 void Spectacle<Type> :: setDrama ( string title, string type, short time )
 {
 	drama = Drama ( title, type, time ); 
 }
 
-template<class Type>
+/*
+ * @param drama new drama
+ * set drama as new drama
+ */
+template <class Type>
+void Spectacle<Type> :: setDrama ( Drama drama )
+{
+	this->drama = drama; 
+}
+
+/*
+ * @param number new number of viewers
+ * set new number of viewers
+ */
+template <class Type>
 void Spectacle<Type> :: setViewersNumber ( short number )
 {
 	viewers = number;
 }
 
-template<class Type>
+/*
+ * @param numberOfPlaces new number of places
+ * set numbrerOfPlaces as new number of places
+ */
+template <class Type>
+void Spectacle<Type> :: setNumberOfPlaces ( short numberOfPlaces )
+{
+	this->numberOfPlaces = numberOfPlaces;
+}
+
+/*
+ * @param actor actor to add
+ * add new actor to vector of actors
+ */
+template <class Type>
 void Spectacle<Type> :: addActor ( Employee & actor )
 {
 	actors.push_back( actor );
 }
 
-template<class Type>
+/*
+ * @param actors vector of actors
+ * add whole vector of actors to our vector of actors
+ */
+template <class Type>
 void Spectacle<Type> :: addActor ( vector<Employee>& actors )
 {
 	vector<Employee>::iterator end = this->actors.end();
@@ -47,14 +115,55 @@ void Spectacle<Type> :: addActor ( vector<Employee>& actors )
 	this->actors.insert( end, actors.begin(), actors.end() );
 }
 
-template<class Type>
+/*
+ * @param cost new cost of spectacle
+ * decrease profit of spectacle
+ */
+template <class Type>
+void Spectacle<Type> :: addCosts ( const Type cost )
+{
+	profit -= cost;
+}
+
+/*
+template <class Type>
 void Spectacle<Type> :: addViewers ( short people, Type cash )
 {
 	viewers += people;
 	profit += cash;
 }
+*/
 
-template<class Type>
+/*
+ * @param ticket new ticket
+ * add sold ticket
+ */
+template <class Type>
+bool Spectacle<Type> :: addTicket ( const Ticket & ticket )
+{
+	if( soldTickets == numberOfPlaces )
+		return false;
+	
+	tickets [soldTickets] = ticket;
+	++soldTickets;
+	
+	profit += ticket.price;
+}
+
+/*
+ * @return director of spectacle
+ * get director of spectacle
+ */
+template <class Type>
+Employee Spectacle<Type> :: getDirector () const
+{
+	return director;
+}
+
+/*
+ * write on standard output whole vector of actors
+ */
+template <class Type>
 void Spectacle<Type> :: writeActors () const
 {
 	for( vector<Employee>::iterator it = actors.begin(); it != actors.end(); ++it )
@@ -62,7 +171,3 @@ void Spectacle<Type> :: writeActors () const
 		cout<<*it;
 	}
 }
-
-
-
-

@@ -7,24 +7,41 @@ Ticket :: Ticket ()
 	//do nothing
 }
 
-Ticket ( std::string type, short price, short ticketNumber )
+Ticket :: Ticket ( std::string type, short price, short ticketNumber )
 {
 	this->type = type;
 	this->price = price;
 	this->ticketNumber = ticketNumber;
 }
 
+/*
+ * @return type of ticket
+ */
 std::string Ticket :: getTicketType () const
 {
 	return type;
 }
 
+/*
+ * @return price of ticket
+ */
 short Ticket :: getPrice () const
 {
 	return price;
 }
 
-short getTicketsNumber () const
+/*
+ * @return number of ticket
+ */
+short Ticket :: getTicketNumber () const
 {
-	return ticketsNumber;
+	return ticketNumber;
+}
+/*
+ * @param ticket to assign
+ */
+void Ticket :: operator = (const Ticket & otherTicket)
+{
+	type = otherTicket.type;
+	price = otherTicket.price;
 }
