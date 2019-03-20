@@ -22,6 +22,8 @@ class Spectacle
 		std::vector<Employee>actors;
 		//short viewers;
 		Type profit;
+		
+		void setNumberOfPlaces ( const short & numberOfPlaces );
 	
 	public:
 		Spectacle ();
@@ -33,7 +35,6 @@ class Spectacle
 		void setDrama ( const std::string & title, const short & time );
 		void setDrama ( const Drama & drama );
 		//void setViewersNumber( const short & number );
-		void setNumberOfPlaces ( const short & numberOfPlaces );
 		
 		void addActor ( const Employee & actor );
 		void addActor ( const std::vector<Employee> & actors );

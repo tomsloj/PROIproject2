@@ -7,10 +7,9 @@ class Ticket
 {
 	private:
 		short ticketNumber;
-		
-	public:
 		std::string type;
 		short price;
+	public:
 		Ticket ();
 		Ticket ( std::string type, short price, short ticketNumber);
 		

@@ -17,13 +17,29 @@ using namespace std;
 vector<Employee> getBaseOfEmployees ();
 vector<Drama> getBaseOfDrames ();
 
+void writeOptions ();
+
+template<class Type>
+void writeSpectaclesNames ( Spectacle<Type> & spectacle1, Spectacle<Type> & spectacle2, Spectacle<Type> & spectacle3 );
+
+template<class Type>
+Spectacle<Type>* chooseSpectacle ();
+
 int main ()
 {
 	vector<Employee> vectorOfEmployees = getBaseOfEmployees();
 	vector<Drama> vectorOfDramas = getBaseOfDrames();
 	
 	short numberOfPlaces = 20;
-	Spectacle<short> spec(numberOfPlaces);
+	Spectacle<short> spectacle1( numberOfPlaces );
+	spectacle1.setDrama( vectorOfDramas[0] );
+	spectacle1.setDirector( vectorOfEmployees[15] );
+	spectacle1.addActor( vectorOfEmployees[0] );
+	spectacle1.addActor( vectorOfEmployees[1] );
+	spectacle1.addActor( vectorOfEmployees[2] );
+
+	
+	
 
 	return 0;
 }
@@ -69,4 +85,21 @@ vector<Drama> getBaseOfDrames ()
 	vectorOfDrama.push_back( Drama("Dziady", 235) );
 
 	return vectorOfDrama;
+}
+
+void writeOptions()
+{
+	 
+}
+
+template<class Type>
+void writeSpectaclesNames ( Spectacle<Type> & spectacle1, Spectacle<Type> & spectacle2, Spectacle<Type> & spectacle3 )
+{
+
+}
+
+template<class Type>
+Spectacle<Type>* chooseSpectacle()
+{
+
 }

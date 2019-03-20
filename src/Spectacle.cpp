@@ -22,7 +22,7 @@ template <class Type>
 Spectacle<Type> :: Spectacle ( short numberOfPlaces )
 {
 	setNumberOfPlaces( numberOfPlaces );
-	Ticket* tickets = new Ticket [numberOfPlaces];
+	tickets = new Ticket [numberOfPlaces];
 	soldTickets = 0;
 }
 
@@ -153,7 +153,8 @@ bool Spectacle<Type> :: addTicket ( const Ticket & ticket )
 	tickets [soldTickets] = ticket;
 	++soldTickets;
 	
-	profit += ticket.price;
+	profit += ticket.getPrice();
+	return true;
 }
 
 /*
