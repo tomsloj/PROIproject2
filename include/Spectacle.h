@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <ctime>
+#include <typeinfo>
 
 #include "Employee.h"
 #include "Drama.h"

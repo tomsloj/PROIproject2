@@ -4,6 +4,7 @@
 
 #include <string>
 #include <iostream>
+#include <typeinfo>
 
 #include "Spectacle.h"
 
@@ -12,6 +13,7 @@ using namespace std;
 template <class Type>
 Spectacle<Type> :: Spectacle ()
 {
+	cout << "create\n";
 	//do nothing
 }
 
@@ -26,6 +28,7 @@ Spectacle<Type> :: Spectacle ( short numberOfPlaces )
 template <class Type>
 Spectacle<Type> :: ~Spectacle ()
 {
+	cout << "delete\n";
 	delete[] tickets;
 }
 
@@ -173,3 +176,8 @@ void Spectacle<Type> :: writeActors () const
 		(*it).writeEmployee();
 	}
 }
+/*
+template class Spectacle<short>;
+template class Spectacle<int>;
+template class Spectacle<long>;
+*/

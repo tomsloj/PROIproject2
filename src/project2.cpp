@@ -5,10 +5,12 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <typeinfo>
 
 #include <Employee.h>
 #include <Drama.h>
 #include <Spectacle.h>
+#include <Ticket.h>
 
 using namespace std;
 
@@ -21,7 +23,7 @@ int main ()
 	vector<Drama> vectorOfDramas = getBaseOfDrames();
 	
 	short numberOfPlaces = 20;
-	Spectacle <short>* spectacle = new Spectacle<short>;
+	Spectacle<int> spec;
 
 	return 0;
 }
