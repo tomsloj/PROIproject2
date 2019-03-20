@@ -23,7 +23,7 @@ int main ()
 	vector<Drama> vectorOfDramas = getBaseOfDrames();
 	
 	short numberOfPlaces = 20;
-	Spectacle<int> spec;
+	Spectacle<short> spec(numberOfPlaces);
 
 	return 0;
 }

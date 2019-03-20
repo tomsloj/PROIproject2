@@ -6,11 +6,11 @@
 class Ticket
 {
 	private:
-		std::string type;
-		short price;
 		short ticketNumber;
 		
 	public:
+		std::string type;
+		short price;
 		Ticket ();
 		Ticket ( std::string type, short price, short ticketNumber);
 		

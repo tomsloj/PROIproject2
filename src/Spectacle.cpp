@@ -7,6 +7,7 @@
 #include <typeinfo>
 
 #include "Spectacle.h"
+#include "Drama.h"
 
 using namespace std;
 
@@ -61,9 +62,9 @@ void Spectacle<Type> :: setDirector( const Employee & director )
  * set drama as new drama
  */
 template <class Type>
-void Spectacle<Type> :: setDrama ( const string & title, const string & type, const short & time )
+void Spectacle<Type> :: setDrama ( const string & title, const short & time )
 {
-	drama = Drama ( title, type, time ); 
+	drama = Drama ( title, time ); 
 }
 
 /*
@@ -169,15 +170,15 @@ Employee Spectacle<Type> :: getDirector () const
  * write on standard output whole vector of actors
  */
 template <class Type>
-void Spectacle<Type> :: writeActors () const
+void Spectacle<Type> :: writeActors ()
 {
-	for( vector<Employee>::iterator it = actors.begin(); it != actors.end(); ++it )
+	vector<Employee>::iterator it;
+	for( it = actors.begin(); it != actors.end(); ++it )
 	{
 		(*it).writeEmployee();
 	}
 }
-/*
+
 template class Spectacle<short>;
 template class Spectacle<int>;
 template class Spectacle<long>;
-*/
