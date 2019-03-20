@@ -13,11 +13,16 @@
 using namespace std;
 
 vector<Employee> getBaseOfEmployees ();
+vector<Drama> getBaseOfDrames ();
 
 int main ()
 {
-	//Employee tmp ("Jan", "Kowalski", 21);
-	//cout << tmp << "\n";
+	vector<Employee> vectorOfEmployees = getBaseOfEmployees();
+	vector<Drama> vectorOfDramas = getBaseOfDrames();
+	
+	short numberOfPlaces = 20;
+	Spectacle <short>* spectacle = new Spectacle<short>;
+
 	return 0;
 }
 
@@ -25,21 +30,41 @@ vector<Employee> getBaseOfEmployees ()
 {
 	vector<Employee>vectorOfEmployees;
 	
-	vectorOfEmployees.push_back( Employee( "Cezary", "Pazura", 50 ) );
-	vectorOfEmployees.push_back( Employee( "Angelina", "Jolie", 44 ) );
-	vectorOfEmployees.push_back( Employee( "Leonardo", "DiCaprio", 44 ) );
-	vectorOfEmployees.push_back( Employee( "Alan", "Rickman", 69 ) );
-	vectorOfEmployees.push_back( Employee( "Clint", "Eastwood", 88 ) );
-	vectorOfEmployees.push_back( Employee( "Hugh", "Laurie", 59 ) );
-	vectorOfEmployees.push_back( Employee( "Tom", "Hanks", 62 ) );
-	vectorOfEmployees.push_back( Employee( "Joe", "Pesci", 76 ) );
-	vectorOfEmployees.push_back( Employee( "Edward", "Norton", 49 ) );
-	vectorOfEmployees.push_back( Employee( "Johny", "Depp", 55 ) );
+	vectorOfEmployees.push_back( Employee( "Krystyna", "Janda", 66 ) );
+	vectorOfEmployees.push_back( Employee( "Janusz", "Bogacki", 70 ) );
+	vectorOfEmployees.push_back( Employee( "Tomasz", "Bogacki", 65 ) );
+	vectorOfEmployees.push_back( Employee( "Oskar", "Stoczynski", 27 ) );
+	vectorOfEmployees.push_back( Employee( "Julia", "Wyszynska", 33 ) );
+	vectorOfEmployees.push_back( Employee( "Karolina", "Adamczyk", 43 ) );
+	vectorOfEmployees.push_back( Employee( "Ewa", "Szumska", 45 ) );
+	vectorOfEmployees.push_back( Employee( "Michal", "Kaleta", 42 ) );
+	vectorOfEmployees.push_back( Employee( "Jan", "Peszek", 75 ) );
+	vectorOfEmployees.push_back( Employee( "Mariusz", "Benoit", 68 ) );
+	vectorOfEmployees.push_back( Employee( "Jacek", "Belar", 36 ) );
+	vectorOfEmployees.push_back( Employee( "Katarzyna", "Zielinska", 37 ) );
+	vectorOfEmployees.push_back( Employee( "Mateusz", "Rusin", 30 ) );
+	vectorOfEmployees.push_back( Employee( "Marcin", "Przybylski", 43 ) );
+	vectorOfEmployees.push_back( Employee( "Grzegorz", "Malecki", 43 ) );
 	
-	vectorOfEmployees.push_back( Employee( "Quentin", "Tarantino", 55 ) );
-	vectorOfEmployees.push_back( Employee( "Sergio", "Leone", 60 ) );
-	vectorOfEmployees.push_back( Employee( "David", "Fincher", 56 ) );
-	vectorOfEmployees.push_back( Employee( "Frank", "Darabont", 60 ) );
+	vectorOfEmployees.push_back( Employee( "Magda", "Umer", 69 ) );
+	vectorOfEmployees.push_back( Employee( "Krzysztof", "Garbaczewski", 36 ) );
+	vectorOfEmployees.push_back( Employee( "Jan", "Klata", 46 ) );
+	vectorOfEmployees.push_back( Employee( "Grazyna", "Kania", 47 ) );
+	vectorOfEmployees.push_back( Employee( "Elimutas", "Nekrosius", 67 ) );
 
 	return vectorOfEmployees;	
+}
+
+
+vector<Drama> getBaseOfDrames ()
+{
+	vector<Drama>vectorOfDrama;
+
+	vectorOfDrama.push_back( Drama("Zapiski z wygnania", 100) );
+	vectorOfDrama.push_back( Drama("Nietota", 75) );
+	vectorOfDrama.push_back( Drama("Wielki Fryderyk", 260) );
+	vectorOfDrama.push_back( Drama("Romeo i Julia", 135) );
+	vectorOfDrama.push_back( Drama("Dziady", 235) );
+
+	return vectorOfDrama;
 }

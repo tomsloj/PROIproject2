@@ -16,10 +16,10 @@ Spectacle<Type> :: Spectacle ()
 }
 
 template <class Type>
-Spectacle<Type> :: Spectacle (const short & numberOfPlaces)
+Spectacle<Type> :: Spectacle ( short numberOfPlaces )
 {
 	setNumberOfPlaces( numberOfPlaces );
-	tickets = new Ticket [numberOfPlaces];
+	Ticket* tickets = new Ticket [numberOfPlaces];
 	soldTickets = 0;
 }
 
@@ -58,7 +58,7 @@ void Spectacle<Type> :: setDirector( const Employee & director )
  * set drama as new drama
  */
 template <class Type>
-void Spectacle<Type> :: setDrama ( string title, string type, short time )
+void Spectacle<Type> :: setDrama ( const string & title, const string & type, const short & time )
 {
 	drama = Drama ( title, type, time ); 
 }
@@ -68,7 +68,7 @@ void Spectacle<Type> :: setDrama ( string title, string type, short time )
  * set drama as new drama
  */
 template <class Type>
-void Spectacle<Type> :: setDrama ( Drama drama )
+void Spectacle<Type> :: setDrama ( const Drama & drama )
 {
 	this->drama = drama; 
 }
@@ -77,18 +77,20 @@ void Spectacle<Type> :: setDrama ( Drama drama )
  * @param number new number of viewers
  * set new number of viewers
  */
+/*
 template <class Type>
-void Spectacle<Type> :: setViewersNumber ( short number )
+void Spectacle<Type> :: setViewersNumber ( const short & number )
 {
 	viewers = number;
 }
+*/
 
 /*
  * @param numberOfPlaces new number of places
  * set numbrerOfPlaces as new number of places
  */
 template <class Type>
-void Spectacle<Type> :: setNumberOfPlaces ( short numberOfPlaces )
+void Spectacle<Type> :: setNumberOfPlaces ( const short & numberOfPlaces )
 {
 	this->numberOfPlaces = numberOfPlaces;
 }
@@ -98,7 +100,7 @@ void Spectacle<Type> :: setNumberOfPlaces ( short numberOfPlaces )
  * add new actor to vector of actors
  */
 template <class Type>
-void Spectacle<Type> :: addActor ( Employee & actor )
+void Spectacle<Type> :: addActor ( const Employee & actor )
 {
 	actors.push_back( actor );
 }
@@ -108,7 +110,7 @@ void Spectacle<Type> :: addActor ( Employee & actor )
  * add whole vector of actors to our vector of actors
  */
 template <class Type>
-void Spectacle<Type> :: addActor ( vector<Employee>& actors )
+void Spectacle<Type> :: addActor ( const vector<Employee> & actors )
 {
 	vector<Employee>::iterator end = this->actors.end();
 	//append whole vector
@@ -120,7 +122,7 @@ void Spectacle<Type> :: addActor ( vector<Employee>& actors )
  * decrease profit of spectacle
  */
 template <class Type>
-void Spectacle<Type> :: addCosts ( const Type cost )
+void Spectacle<Type> :: addCosts ( const Type & cost )
 {
 	profit -= cost;
 }
@@ -168,6 +170,6 @@ void Spectacle<Type> :: writeActors () const
 {
 	for( vector<Employee>::iterator it = actors.begin(); it != actors.end(); ++it )
 	{
-		cout<<*it;
+		(*it).writeEmployee();
 	}
 }

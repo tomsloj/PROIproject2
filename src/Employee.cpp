@@ -3,6 +3,7 @@
  */
 
 #include <string>
+#include <iostream>
 
 #include "Employee.h"
 
@@ -49,4 +50,9 @@ void Employee :: operator = (const Employee & otherEmployee)
 	name = otherEmployee.name;
 	surname = otherEmployee.surname;
 	age = otherEmployee.age;
+}
+
+void Employee :: writeEmployee ()
+{
+	cout << name << " " << surname << " " << age << "\n";
 }

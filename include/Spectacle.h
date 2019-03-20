@@ -19,23 +19,24 @@ class Spectacle
 		short soldTickets;
 		Ticket *tickets;
 		std::vector<Employee>actors;
-		short viewers;
+		//short viewers;
 		Type profit;
 	
 	public:
 		Spectacle ();
-		Spectacle ( const short & numberOfPlaces );
+		Spectacle ( short numberOfPlaces );
 		~Spectacle ();
 		
 		void setDirector ( const std::string & name, const std::string & surname, const int & age );
 		void setDirector ( const Employee & director );
-		void setDrama ( std::string title, std::string type, short time );
-		void setViewersNumber( short number );
-		void setNumberOfPlaces ( short numberOfPlaces );
+		void setDrama ( const std::string & title, const std::string & type, const short & time );
+		void setDrama ( const Drama & drama );
+		//void setViewersNumber( const short & number );
+		void setNumberOfPlaces ( const short & numberOfPlaces );
 		
-		void addActor ( Employee & actor );
-		void addActor ( std::vector<Employee>& actors );
-		void addCosts ( const Type cost );
+		void addActor ( const Employee & actor );
+		void addActor ( const std::vector<Employee> & actors );
+		void addCosts ( const Type & cost );
 		//void addViewers ( short people, int cash );
 		
 		bool addTicket ( const Ticket & ticket );
@@ -47,4 +48,4 @@ class Spectacle
 
 
 
-#endif //EPECTACLE_H
+#endif //SPECTACLE_H

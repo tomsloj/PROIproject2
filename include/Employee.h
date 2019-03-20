@@ -17,7 +17,8 @@ class Employee
 		std::string getName () const;
 		std::string getSurname () const;
 		int getAge () const;
-		
+		void writeEmployee();
+
 		void operator = (const Employee & otherEmployee);
 		
 		//friend std::ostream& operator << ( std::ostream & stream, const Employee& employee );
