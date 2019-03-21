@@ -156,6 +156,15 @@ Drama Spectacle<Type> :: getDrama () const
 }
 
 /*
+ * @return profit of spectacle
+ */
+template <class Type>
+Type Spectacle<Type> :: getProfit () const
+{
+	return profit;
+}
+
+/*
  * write on standard output whole vector of actors
  */
 template <class Type>

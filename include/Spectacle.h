@@ -40,6 +40,7 @@ class Spectacle
 		
 		Employee getDirector () const;
 		Drama getDrama () const;
+		Type getProfit () const;
 		void writeActors ();
 };
 

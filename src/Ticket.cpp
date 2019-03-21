@@ -9,11 +9,10 @@ Ticket :: Ticket ()
 	//do nothing
 }
 
-Ticket :: Ticket ( string type, short price, short ticketNumber )
+Ticket :: Ticket ( string type, short price )
 {
 	this->type = type;
 	this->price = price;
-	this->ticketNumber = ticketNumber;
 }
 
 /*
@@ -32,13 +31,6 @@ short Ticket :: getPrice () const
 	return price;
 }
 
-/*
- * @return number of ticket
- */
-short Ticket :: getTicketNumber () const
-{
-	return ticketNumber;
-}
 /*
  * @param ticket to assign
  */
