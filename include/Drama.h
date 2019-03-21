@@ -3,7 +3,6 @@
 
 #include <string>
 
-
 class Drama
 {
 	private:
@@ -20,6 +19,5 @@ class Drama
 		void operator = (const Drama & otherDrama);
 
 };
-
 
 #endif //DRAMA_H

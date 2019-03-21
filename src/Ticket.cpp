@@ -2,12 +2,14 @@
 
 #include <Ticket.h>
 
+using namespace std;
+
 Ticket :: Ticket ()
 {
 	//do nothing
 }
 
-Ticket :: Ticket ( std::string type, short price, short ticketNumber )
+Ticket :: Ticket ( string type, short price, short ticketNumber )
 {
 	this->type = type;
 	this->price = price;
@@ -17,7 +19,7 @@ Ticket :: Ticket ( std::string type, short price, short ticketNumber )
 /*
  * @return type of ticket
  */
-std::string Ticket :: getTicketType () const
+string Ticket :: getTicketType () const
 {
 	return type;
 }

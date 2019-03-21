@@ -4,7 +4,6 @@
 
 #include <string>
 #include <iostream>
-#include <typeinfo>
 
 #include "Spectacle.h"
 #include "Drama.h"
@@ -19,7 +18,7 @@ Spectacle<Type> :: Spectacle ()
 }
 
 template <class Type>
-Spectacle<Type> :: Spectacle ( short numberOfPlaces )
+Spectacle<Type> :: Spectacle ( Type numberOfPlaces )
 {
 	setNumberOfPlaces( numberOfPlaces );
 	tickets = new Ticket [numberOfPlaces];
@@ -78,18 +77,6 @@ void Spectacle<Type> :: setDrama ( const Drama & drama )
 }
 
 /*
- * @param number new number of viewers
- * set new number of viewers
- */
-/*
-template <class Type>
-void Spectacle<Type> :: setViewersNumber ( const short & number )
-{
-	viewers = number;
-}
-*/
-
-/*
  * @param numberOfPlaces new number of places
  * set numbrerOfPlaces as new number of places
  */
@@ -132,15 +119,7 @@ void Spectacle<Type> :: addCosts ( const Type & cost )
 }
 
 /*
-template <class Type>
-void Spectacle<Type> :: addViewers ( short people, Type cash )
-{
-	viewers += people;
-	profit += cash;
-}
-*/
-
-/*
+ * @return false if every ticket is sold, else return true
  * @param ticket new ticket
  * add sold ticket
  */
@@ -165,6 +144,15 @@ template <class Type>
 Employee Spectacle<Type> :: getDirector () const
 {
 	return director;
+}
+
+/*
+ * @return drama of spectacle
+ */
+template <class Type>
+Drama Spectacle<Type> :: getDrama () const
+{
+	return drama;
 }
 
 /*

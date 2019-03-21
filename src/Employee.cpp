@@ -52,6 +52,9 @@ void Employee :: operator = (const Employee & otherEmployee)
 	age = otherEmployee.age;
 }
 
+/*
+ * write name, surname and age of employee
+ */
 void Employee :: writeEmployee ()
 {
 	cout << name << " " << surname << " " << age << "\n";

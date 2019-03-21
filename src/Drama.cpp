@@ -28,7 +28,7 @@ string Drama :: getTitle () const
 }
 
 /*
- *  
+ *   
  */
 short Drama :: getTime () const
 {

@@ -3,12 +3,10 @@
 
 #include <vector>
 #include <ctime>
-#include <typeinfo>
 
 #include "Employee.h"
 #include "Drama.h"
 #include "Ticket.h"
-
 
 template <class Type>
 class Spectacle
@@ -20,34 +18,29 @@ class Spectacle
 		short soldTickets;
 		Ticket *tickets;
 		std::vector<Employee>actors;
-		//short viewers;
 		Type profit;
 		
 		void setNumberOfPlaces ( const short & numberOfPlaces );
 	
 	public:
 		Spectacle ();
-		Spectacle ( short numberOfPlaces );
+		Spectacle ( Type numberOfPlaces );
 		~Spectacle ();
 		
 		void setDirector ( const std::string & name, const std::string & surname, const int & age );
 		void setDirector ( const Employee & director );
 		void setDrama ( const std::string & title, const short & time );
 		void setDrama ( const Drama & drama );
-		//void setViewersNumber( const short & number );
 		
 		void addActor ( const Employee & actor );
 		void addActor ( const std::vector<Employee> & actors );
 		void addCosts ( const Type & cost );
-		//void addViewers ( short people, int cash );
 		
 		bool addTicket ( const Ticket & ticket );
 		
 		Employee getDirector () const;
+		Drama getDrama () const;
 		void writeActors ();
 };
-
-
-
 
 #endif //SPECTACLE_H

@@ -21,5 +21,4 @@ class Ticket
 		void operator = (const Ticket & otherTicket);
 };
 
-
 #endif //TICKET_H
