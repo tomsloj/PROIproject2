@@ -1,3 +1,7 @@
+/*
+ * @author Tomasz Słojewski
+ */
+
 #ifndef DRAMA_H
 #define DRAMA_H
 

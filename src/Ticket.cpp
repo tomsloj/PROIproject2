@@ -1,3 +1,7 @@
+/*
+ * @author Tomasz Słojewski
+ */
+
 #include <string>
 
 #include <Ticket.h>

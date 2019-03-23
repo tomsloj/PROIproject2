@@ -13,7 +13,6 @@ using namespace std;
 template <class Type>
 Spectacle<Type> :: Spectacle ()
 {
-	cout << "create\n";
 	//do nothing
 }
 
@@ -23,12 +22,12 @@ Spectacle<Type> :: Spectacle ( Type numberOfPlaces )
 	setNumberOfPlaces( numberOfPlaces );
 	tickets = new Ticket [numberOfPlaces];
 	soldTickets = 0;
+	profit = 0;
 }
 
 template <class Type>
 Spectacle<Type> :: ~Spectacle ()
 {
-	cout << "delete\n";
 	delete[] tickets;
 }
 
@@ -127,8 +126,9 @@ template <class Type>
 bool Spectacle<Type> :: addTicket ( const Ticket & ticket )
 {
 	if( soldTickets == numberOfPlaces )
+	{
 		return false;
-	
+	}
 	tickets [soldTickets] = ticket;
 	++soldTickets;
 	

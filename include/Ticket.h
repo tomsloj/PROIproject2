@@ -1,3 +1,7 @@
+/*
+ * @author Tomasz Słojewski
+ */
+
 #ifndef TICKET_H
 #define TICKET_H
 

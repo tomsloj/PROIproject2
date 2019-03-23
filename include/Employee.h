@@ -1,3 +1,7 @@
+/*
+ * @author Tomasz Słojewski
+ */
+
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 

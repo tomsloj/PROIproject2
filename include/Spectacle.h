@@ -1,3 +1,7 @@
+/*
+ * @author Tomasz Słojewski
+ */
+
 #ifndef SPECTACLE_H
 #define SPECTACLE_H
 

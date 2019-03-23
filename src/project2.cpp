@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <typeinfo>
 
 #include <Employee.h>
 #include <Drama.h>
@@ -57,11 +56,13 @@ int main ()
 	spectacle3.addActor( vectorOfEmployees[6] );
 	spectacle3.addActor( vectorOfEmployees[7] );
 	spectacle3.addActor( vectorOfEmployees[8] );
+	
+	writeSpectaclesNames(spectacle1, spectacle2, spectacle3);
 	int choice = chooseSpectacle();
 
 	while( choice != 0 )
 	{
-		writeSpectaclesNames(spectacle1, spectacle2, spectacle3);
+		
 		switch(choice)
 		{
 			case 1:
@@ -74,7 +75,7 @@ int main ()
 				doSomething(spectacle3);
 				break;
 		}
-
+		writeSpectaclesNames(spectacle1, spectacle2, spectacle3);
 		choice = chooseSpectacle();
 	}
 	return 0;
@@ -93,22 +94,13 @@ vector<Employee> getBaseOfEmployees ()
 	vectorOfEmployees.push_back( Employee( "Ewa", "Szumska", 45 ) );
 	vectorOfEmployees.push_back( Employee( "Michal", "Kaleta", 42 ) );
 	vectorOfEmployees.push_back( Employee( "Jan", "Peszek", 75 ) );
-	vectorOfEmployees.push_back( Employee( "Mariusz", "Benoit", 68 ) );
-	vectorOfEmployees.push_back( Employee( "Jacek", "Belar", 36 ) );
-	vectorOfEmployees.push_back( Employee( "Katarzyna", "Zielinska", 37 ) );
-	vectorOfEmployees.push_back( Employee( "Mateusz", "Rusin", 30 ) );
-	vectorOfEmployees.push_back( Employee( "Marcin", "Przybylski", 43 ) );
-	vectorOfEmployees.push_back( Employee( "Grzegorz", "Malecki", 43 ) );
 	
 	vectorOfEmployees.push_back( Employee( "Magda", "Umer", 69 ) );
 	vectorOfEmployees.push_back( Employee( "Krzysztof", "Garbaczewski", 36 ) );
 	vectorOfEmployees.push_back( Employee( "Jan", "Klata", 46 ) );
-	vectorOfEmployees.push_back( Employee( "Grazyna", "Kania", 47 ) );
-	vectorOfEmployees.push_back( Employee( "Elimutas", "Nekrosius", 67 ) );
-
+	
 	return vectorOfEmployees;	
 }
-
 
 vector<Drama> getBaseOfDrames ()
 {
@@ -165,7 +157,10 @@ void doSomething( Spectacle<Type> & spectacle )
 			cin >> ticketType;
 			cout << "write price of ticket\n";
 			cin >> ticketPrice;
-			spectacle.addTicket( Ticket( ticketType, ticketPrice ));
+			if( !spectacle.addTicket( Ticket( ticketType, ticketPrice )))
+			{
+				cout << "tickets sold out, you cannot add new ticket\n";
+			}
 			break;
 		}
 		case 3:
@@ -175,7 +170,7 @@ void doSomething( Spectacle<Type> & spectacle )
 			spectacle.addCosts( cost );
 			break;
 		case 4:
-			cout << spectacle.getProfit();
+			cout << spectacle.getProfit() << "\n";
 			break;
 	}
 }
@@ -196,4 +191,3 @@ void writeOptions()
 	cout << "3: add cost of spectacle\n";
 	cout << "4: write profit of spectacle\n";
 }
-
