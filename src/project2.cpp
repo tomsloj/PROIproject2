@@ -22,7 +22,7 @@ void writeSpectaclesNames ( Spectacle<Type1> & spectacle1, Spectacle<Type2> & sp
 int chooseSpectacle ();
 
 template <class Type>
-void doSomething( Spectacle<Type> & spectacle );
+void manageSpectacle( Spectacle<Type> & spectacle );
 
 int chooseOption();
 void writeOptions ();
@@ -36,7 +36,7 @@ int main ()
 	short numberOfPlaces1 = 32;
 	Spectacle<short> spectacle1( numberOfPlaces1 );
 	spectacle1.setDrama( vectorOfDramas[0] );
-	spectacle1.setDirector( vectorOfEmployees[15] );
+	spectacle1.setDirector( vectorOfEmployees[9] );
 	spectacle1.addActor( vectorOfEmployees[0] );
 	spectacle1.addActor( vectorOfEmployees[1] );
 	spectacle1.addActor( vectorOfEmployees[2] );
@@ -44,7 +44,7 @@ int main ()
 	int numberOfPlaces2 = 1024;
 	Spectacle<int> spectacle2( numberOfPlaces2 );
 	spectacle2.setDrama( vectorOfDramas[1] );
-	spectacle2.setDirector( vectorOfEmployees[16] );
+	spectacle2.setDirector( vectorOfEmployees[10] );
 	spectacle2.addActor( vectorOfEmployees[3] );
 	spectacle2.addActor( vectorOfEmployees[4] );
 	spectacle2.addActor( vectorOfEmployees[5] );
@@ -52,27 +52,26 @@ int main ()
 	long numberOfPlaces3 = 32768;
 	Spectacle<long> spectacle3( numberOfPlaces3 );
 	spectacle3.setDrama( vectorOfDramas[2] );
-	spectacle3.setDirector( vectorOfEmployees[17] );
+	spectacle3.setDirector( vectorOfEmployees[11] );
 	spectacle3.addActor( vectorOfEmployees[6] );
 	spectacle3.addActor( vectorOfEmployees[7] );
 	spectacle3.addActor( vectorOfEmployees[8] );
 	
 	writeSpectaclesNames(spectacle1, spectacle2, spectacle3);
 	int choice = chooseSpectacle();
-
+	
 	while( choice != 0 )
-	{
-		
+	{	
 		switch(choice)
 		{
 			case 1:
-				doSomething(spectacle1);
+				manageSpectacle( spectacle1 );
 				break;
 			case 2:
-				doSomething(spectacle2);
+				manageSpectacle( spectacle2 );
 				break;
 			case 3:
-				doSomething(spectacle3);
+				manageSpectacle( spectacle3 );
 				break;
 		}
 		writeSpectaclesNames(spectacle1, spectacle2, spectacle3);
@@ -140,7 +139,7 @@ int chooseSpectacle()
 }
 
 template <class Type>
-void doSomething( Spectacle<Type> & spectacle )
+void manageSpectacle( Spectacle<Type> & spectacle )
 {
 	cout << "your choice: " << spectacle.getDrama().getTitle() << "\n";
 	int option = chooseOption();
