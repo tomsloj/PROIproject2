@@ -39,8 +39,8 @@ Spectacle<Type> :: ~Spectacle ()
  */
 template <class Type>
 void Spectacle<Type> :: setDirector(const string & name,
-									const string & surname,
-									const int & age)
+								const string & surname,
+								const int & age)
 {
 	director = Employee( name, surname, age );
 }

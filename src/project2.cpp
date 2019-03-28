@@ -18,14 +18,14 @@ vector<Drama> getBaseOfDrames ();
 
 template <class Type1, class Type2, class Type3>
 void addSpectaclesData ( Spectacle<Type1> & spectacle1,
-							Spectacle<Type2> & spectacle2,
-							Spectacle<Type3> & spectacle3 );
+						Spectacle<Type2> & spectacle2,
+						Spectacle<Type3> & spectacle3 );
 
 
 template <class Type1, class Type2, class Type3>
 void writeSpectaclesNames ( Spectacle<Type1> & spectacle1,
-							Spectacle<Type2> & spectacle2,
-							Spectacle<Type3> & spectacle3 );
+						Spectacle<Type2> & spectacle2,
+						Spectacle<Type3> & spectacle3 );
 
 int chooseSpectacle ();
 
@@ -106,12 +106,12 @@ vector<Drama> getBaseOfDrames ()
 
 template<class Type1, class Type2, class Type3>
 void addSpectaclesData ( Spectacle<Type1> & spectacle1,
-							Spectacle<Type2> & spectacle2,
-							Spectacle<Type3> & spectacle3 )
+						Spectacle<Type2> & spectacle2,
+						Spectacle<Type3> & spectacle3 )
 {
 	vector<Employee> vectorOfEmployees = getBaseOfEmployees();
 	vector<Drama> vectorOfDramas = getBaseOfDrames();
-	
+
 	spectacle1.setDrama( vectorOfDramas[0] );
 	spectacle1.setDirector( vectorOfEmployees[9] );
 	spectacle1.addActor( vectorOfEmployees[0] );
@@ -133,8 +133,8 @@ void addSpectaclesData ( Spectacle<Type1> & spectacle1,
 
 template<class Type1, class Type2, class Type3>
 void writeSpectaclesNames ( Spectacle<Type1> & spectacle1,
-							Spectacle<Type2> & spectacle2,
-							Spectacle<Type3> & spectacle3 )
+						Spectacle<Type2> & spectacle2,
+						Spectacle<Type3> & spectacle3 )
 {
 	cout << "1: ";
 	cout << spectacle1.getDrama().getTitle() << "\n";
