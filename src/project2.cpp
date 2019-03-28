@@ -17,6 +17,12 @@ vector<Employee> getBaseOfEmployees ();
 vector<Drama> getBaseOfDrames ();
 
 template <class Type1, class Type2, class Type3>
+void addSpectaclesData ( Spectacle<Type1> & spectacle1,
+							Spectacle<Type2> & spectacle2,
+							Spectacle<Type3> & spectacle3 );
+
+
+template <class Type1, class Type2, class Type3>
 void writeSpectaclesNames ( Spectacle<Type1> & spectacle1,
 							Spectacle<Type2> & spectacle2,
 							Spectacle<Type3> & spectacle3 );
@@ -29,36 +35,18 @@ void manageSpectacle( Spectacle<Type> & spectacle );
 int chooseOption();
 void writeOptions ();
 
-
 int main ()
-{
-	vector<Employee> vectorOfEmployees = getBaseOfEmployees();
-	vector<Drama> vectorOfDramas = getBaseOfDrames();
-	
+{	
 	short numberOfPlaces1 = 32;
 	Spectacle<short> spectacle1( numberOfPlaces1 );
-	spectacle1.setDrama( vectorOfDramas[0] );
-	spectacle1.setDirector( vectorOfEmployees[9] );
-	spectacle1.addActor( vectorOfEmployees[0] );
-	spectacle1.addActor( vectorOfEmployees[1] );
-	spectacle1.addActor( vectorOfEmployees[2] );
 
 	int numberOfPlaces2 = 1024;
 	Spectacle<int> spectacle2( numberOfPlaces2 );
-	spectacle2.setDrama( vectorOfDramas[1] );
-	spectacle2.setDirector( vectorOfEmployees[10] );
-	spectacle2.addActor( vectorOfEmployees[3] );
-	spectacle2.addActor( vectorOfEmployees[4] );
-	spectacle2.addActor( vectorOfEmployees[5] );
 	
 	long numberOfPlaces3 = 32768;
 	Spectacle<long> spectacle3( numberOfPlaces3 );
-	spectacle3.setDrama( vectorOfDramas[2] );
-	spectacle3.setDirector( vectorOfEmployees[11] );
-	spectacle3.addActor( vectorOfEmployees[6] );
-	spectacle3.addActor( vectorOfEmployees[7] );
-	spectacle3.addActor( vectorOfEmployees[8] );
 	
+	addSpectaclesData(spectacle1, spectacle2, spectacle3);
 	writeSpectaclesNames(spectacle1, spectacle2, spectacle3);
 	int choice = chooseSpectacle();
 	
@@ -114,6 +102,33 @@ vector<Drama> getBaseOfDrames ()
 	vectorOfDrama.push_back( Drama("Dziady", 235) );
 
 	return vectorOfDrama;
+}
+
+template<class Type1, class Type2, class Type3>
+void addSpectaclesData ( Spectacle<Type1> & spectacle1,
+							Spectacle<Type2> & spectacle2,
+							Spectacle<Type3> & spectacle3 )
+{
+	vector<Employee> vectorOfEmployees = getBaseOfEmployees();
+	vector<Drama> vectorOfDramas = getBaseOfDrames();
+	
+	spectacle1.setDrama( vectorOfDramas[0] );
+	spectacle1.setDirector( vectorOfEmployees[9] );
+	spectacle1.addActor( vectorOfEmployees[0] );
+	spectacle1.addActor( vectorOfEmployees[1] );
+	spectacle1.addActor( vectorOfEmployees[2] );
+
+	spectacle2.setDrama( vectorOfDramas[1] );
+	spectacle2.setDirector( vectorOfEmployees[10] );
+	spectacle2.addActor( vectorOfEmployees[3] );
+	spectacle2.addActor( vectorOfEmployees[4] );
+	spectacle2.addActor( vectorOfEmployees[5] );
+	
+	spectacle3.setDrama( vectorOfDramas[2] );
+	spectacle3.setDirector( vectorOfEmployees[11] );
+	spectacle3.addActor( vectorOfEmployees[6] );
+	spectacle3.addActor( vectorOfEmployees[7] );
+	spectacle3.addActor( vectorOfEmployees[8] );
 }
 
 template<class Type1, class Type2, class Type3>
