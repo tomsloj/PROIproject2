@@ -38,7 +38,9 @@ Spectacle<Type> :: ~Spectacle ()
  * set new director
  */
 template <class Type>
-void Spectacle<Type> :: setDirector(const string & name, const string & surname, const int & age)
+void Spectacle<Type> :: setDirector(const string & name,
+									const string & surname,
+									const int & age)
 {
 	director = Employee( name, surname, age );
 }

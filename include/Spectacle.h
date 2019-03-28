@@ -31,7 +31,9 @@ class Spectacle
 		Spectacle ( Type numberOfPlaces );
 		~Spectacle ();
 		
-		void setDirector ( const std::string & name, const std::string & surname, const int & age );
+		void setDirector ( const std::string & name,
+							const std::string & surname,
+							const int & age );
 		void setDirector ( const Employee & director );
 		void setDrama ( const std::string & title, const short & time );
 		void setDrama ( const Drama & drama );
