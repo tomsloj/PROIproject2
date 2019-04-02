@@ -5,8 +5,8 @@
 #include <string>
 #include <iostream>
 
-#include "Spectacle.h"
-#include "Drama.h"
+#include "Spectacle.hpp"
+#include "Drama.hpp"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ Spectacle<Type> :: Spectacle ()
 template <class Type>
 Spectacle<Type> :: Spectacle ( Type numberOfPlaces )
 {
-	setNumberOfPlaces( numberOfPlaces );
+	this->numberOfPlaces = numberOfPlaces;
 	tickets = new Ticket [numberOfPlaces];
 	soldTickets = 0;
 	profit = 0;
@@ -75,16 +75,6 @@ template <class Type>
 void Spectacle<Type> :: setDrama ( const Drama & drama )
 {
 	this->drama = drama; 
-}
-
-/*
- * @param numberOfPlaces new number of places
- * set numbrerOfPlaces as new number of places
- */
-template <class Type>
-void Spectacle<Type> :: setNumberOfPlaces ( const short & numberOfPlaces )
-{
-	this->numberOfPlaces = numberOfPlaces;
 }
 
 /*

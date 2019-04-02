@@ -6,11 +6,10 @@
 #define SPECTACLE_H
 
 #include <vector>
-#include <ctime>
 
-#include "Employee.h"
-#include "Drama.h"
-#include "Ticket.h"
+#include "Employee.hpp"
+#include "Drama.hpp"
+#include "Ticket.hpp"
 
 template <class Type>
 class Spectacle
@@ -24,8 +23,6 @@ class Spectacle
 		std::vector<Employee>actors;
 		Type profit;
 		
-		void setNumberOfPlaces ( const short & numberOfPlaces );
-	
 	public:
 		Spectacle ();
 		Spectacle ( Type numberOfPlaces );
